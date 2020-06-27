@@ -1,0 +1,4 @@
+---
+ansible_connection: ssh
+ansible_ssh_user: serhii
+ansible_ssh_private_key_file: /home/serhii/.ssh/id_rsa

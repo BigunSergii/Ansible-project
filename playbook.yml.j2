@@ -1,0 +1,28 @@
+---
+
+- name: Generate dynamic host list
+  hosts: localhost
+  gather_facts: yes
+  tasks: 
+    - name: get ip host
+      shell: echo "{{ hosts }}" | tr '[,]' '\n'
+      register: dockerHost
+
+    - set_fact: dockerHost="{{dockerHost}}"
+      when: dockerHost.changed
+
+    - debug: msg="{{ dockerHost.stdout }}"
+
+    - name: Greate dynamic group host
+      add_host:
+        group: docker
+        hostname: {{item}}
+      with_item: "{{ dockerHost.stdout }}"
+
+- hosts: docker
+  become: yes
+  become_method: sudo
+  roles:
+    {%for i in roles%}
+        - {{ i }}
+    {%endfor%}

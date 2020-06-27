@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: yes
+  become_method: sudo
+  roles:
+    - transfer_files_create_folder
+
+- hosts: all
+  become: yes
+  become_method: sudo
+  roles:
+    - install_common_soft
+
+- hosts: web
+  become: yes
+  become_method: sudo
+  roles:
+    - install_nginx
+
+- hosts: db
+  become: yes
+  become_method: sudo
+  roles:
+    - install_and_ config_mysql

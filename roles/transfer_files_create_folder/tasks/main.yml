@@ -1,0 +1,14 @@
+---
+- name: Move files
+  copy:
+    src: /home/serhii/hello.sh
+    dest: /tmp
+    # owner: serhii
+    # group: serhii
+    # mode: '0644'
+
+- name: Create /opt/itstep if it does not exist
+  file:
+    path: /opt/itstep
+    state: directory
+    mode: '0777'

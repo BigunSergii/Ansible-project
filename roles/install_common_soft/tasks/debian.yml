@@ -1,0 +1,23 @@
+- name: Insure instalation pakets
+  apt:
+    name: curl
+    state: latest
+    update_cache: yes
+
+- name: Instalation vim
+  apt:
+    name: vim
+    state: latest
+    update_cache: yes
+
+- name: Instalation htop
+  apt:
+    name: htop
+    state: latest
+    update_cache: yes
+  
+- name: Instalation zip
+  apt:
+    name: zip
+    state: latest
+    update_cache: yes

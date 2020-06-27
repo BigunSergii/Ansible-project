@@ -1,0 +1,8 @@
+---
+ansible_connection: ssh
+ansible_ssh_user: root
+ansible_ssh_pass: root
+
+#Mysql variebles
+mysql_user: alex
+mysql_root_password: admin

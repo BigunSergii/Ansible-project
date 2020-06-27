@@ -1,0 +1,24 @@
+---
+- name: Insure instalation pakets
+  yum:
+    name: curl
+    state: latest
+    update_cache: yes
+
+- name: Instalation vim
+  yum:
+    name: vim
+    state: latest
+    update_cache: yes
+
+- name: Instalation htop
+  yum:
+    name: htop
+    state: latest
+    update_cache: yes
+  
+- name: Instalation zip
+  yum:
+    name: zip
+    state: latest
+    update_cache: yes
