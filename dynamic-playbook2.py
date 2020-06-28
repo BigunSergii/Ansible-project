@@ -4,13 +4,13 @@ import os
 from jinja2 import Environment, FileSystemLoader
 parser = argparse.ArgumentParser(
     description='Parser to install programs on dockers')
-parser.add_argument('--tasks', dest="tasks", default=None,
+parser.add_argument('--roles', dest="roles", default=None,
                     type=str, help="tasks for remote dockers", required=False)
 args = parser.parse_args()
-tasks = args.tasks
+roles = args.roles
 
-def main(tasks):
-    listOfTasks = tasks.split(",")
+def main(roles):
+    listOfTasks = roles.split(",")
     for i in listOfTasks:
         print(i)
     tempFile = 'playbook.yml.j2'
@@ -21,4 +21,4 @@ def main(tasks):
     output = template.render(roles=listOfTasks)
     with open("playbook.yml", "w") as f:
         f.write(output)
-main(tasks)
+main(roles)
