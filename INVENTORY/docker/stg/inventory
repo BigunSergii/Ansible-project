@@ -1,0 +1,10 @@
+[db]
+docker4 ansible_host=13.90.140.245 ansible_port=5558
+docker5 ansible_host=13.90.140.245 ansible_port=5559
+
+[db:vars]
+ansible_connection  = ssh
+ansible_ssh_user    = root
+ansible_ssh_pass    = root
+mysql_user          = alex
+mysql_root_password = admin

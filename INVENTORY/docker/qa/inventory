@@ -1,0 +1,9 @@
+[web]
+docker1 ansible_host=13.90.140.245 ansible_port=5555
+docker2 ansible_host=13.90.140.245 ansible_port=5556
+docker3 ansible_host=13.90.140.245 ansible_port=5557
+
+[web:vars]
+ansible_connection = ssh
+ansible_ssh_user   = root
+ansible_ssh_pass   = root

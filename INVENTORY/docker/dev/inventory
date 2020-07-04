@@ -1,0 +1,7 @@
+[linux]
+azure_server1 ansible_host=13.90.140.245
+
+[linux:vars]
+ansible_connection = ssh
+ansible_ssh_user   = serhii
+ansible_ssh_private_key_file = /home/serhii/.ssh/id_rsa
